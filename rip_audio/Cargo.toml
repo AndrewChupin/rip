@@ -4,6 +4,10 @@ version = "0.1.0"
 authors = ["Andrew Chupin <artas.96@mail.ru>"]
 edition = "2018"
 
+[dependencies]
+portaudio = "*"
+rip_core = { path = "../rip_core" }
+
 [lib]
 name = "rip_audio"
 path = "src/lib.rs"

@@ -1,0 +1,6 @@
+
+
+enum NetError {
+    InvalidHostFormat,
+    FailedConnection,
+}
