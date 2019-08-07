@@ -1,0 +1,9 @@
+[package]
+name = "vo_core"
+version = "0.1.0"
+authors = ["Andrew Chupin <artas.96@mail.ru>"]
+edition = "2018"
+
+[lib]
+name = "vo_core"
+path = "src/lib.rs"
