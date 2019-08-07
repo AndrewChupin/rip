@@ -1,5 +1,7 @@
 [workspace]
 members = [
-    "main",
-    "vo_core",
+    "rip",
+    "rip_core",
+    "rip_net",
+    "rip_audio"
 ]

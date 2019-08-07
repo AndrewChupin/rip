@@ -1,0 +1,9 @@
+[package]
+name = "rip_audio"
+version = "0.1.0"
+authors = ["Andrew Chupin <artas.96@mail.ru>"]
+edition = "2018"
+
+[lib]
+name = "rip_audio"
+path = "src/lib.rs"

@@ -1,11 +1,16 @@
 [[package]]
-name = "main"
+name = "rip"
 version = "0.1.0"
-dependencies = [
- "vo_core 0.1.0",
-]
 
 [[package]]
-name = "vo_core"
+name = "rip_audio"
+version = "0.1.0"
+
+[[package]]
+name = "rip_core"
+version = "0.1.0"
+
+[[package]]
+name = "rip_net"
 version = "0.1.0"
 

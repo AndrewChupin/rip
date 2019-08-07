@@ -1,8 +1,0 @@
-[package]
-name = "main"
-version = "0.1.0"
-authors = ["Andrew Chupin <artas.96@mail.ru>"]
-edition = "2018"
-
-[dependencies]
-vo_core = { path = "/Users/andrew/CLionProject/rust-voip/vo_core" }
