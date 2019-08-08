@@ -1,6 +1,5 @@
 [workspace]
 members = [
-    "samples",
     "rip",
     "rip_core",
     "rip_net",

@@ -71,6 +71,9 @@ dependencies = [
 [[package]]
 name = "rip"
 version = "0.1.0"
+dependencies = [
+ "rip_audio 0.1.0",
+]
 
 [[package]]
 name = "rip_audio"
@@ -87,13 +90,6 @@ version = "0.1.0"
 [[package]]
 name = "rip_net"
 version = "0.1.0"
-
-[[package]]
-name = "samples"
-version = "0.1.0"
-dependencies = [
- "rip_audio 0.1.0",
-]
 
 [metadata]
 "checksum autocfg 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)" = "22130e92352b948e7e82a49cdb0aa94f2211761117f29e052dd397c1ac33542b"

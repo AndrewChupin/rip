@@ -4,6 +4,9 @@ version = "0.1.0"
 authors = ["Andrew Chupin <artas.96@mail.ru>"]
 edition = "2018"
 
+[dependencies]
+rip_audio = { path = "../rip_audio" }
+
 [lib]
 name = "rip"
 path = "src/lib.rs"
