@@ -30,17 +30,17 @@ fn start() {
             let flow_settings = FlowSettings::new(DEFAULT_FRAMES, DEFAULT_RATE);
             let mut o_flow = o_stream.flow_output::<u8>(flow_settings).unwrap();
 
-            let mut buf = [0 as u8; 256];
+            let mut buf = [0 as u8; 128];
 
             o_flow.start();
 
             loop {
                 let result = reader.read(&mut buf).await;
                 if let Ok(size) = result {
-                    println!("Get frame from server {}", size);
                     let out_frames = wait_for_stream(|| o_flow.write_available(), "Write");
-                    o_flow.write(256, |out| {
-                        for i in 0..255 {
+
+                    o_flow.write(64, |out| {
+                        for i in 0..128 {
                             out[i] = buf[i];
                         }
                     })

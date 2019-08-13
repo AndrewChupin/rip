@@ -77,7 +77,6 @@ pub fn wait_for_stream<F>(f: F, name: &str) -> u32
             Ok(available) => match available {
                 StreamAvailable::Frames(frames) => {
                     if frames > 0 {
-                        println!("frame {}", frames);
                         return frames as u32
                     }
                 },

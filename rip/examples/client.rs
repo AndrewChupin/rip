@@ -36,17 +36,15 @@ fn start() {
             let flow_settings = FlowSettings::new(DEFAULT_FRAMES, DEFAULT_RATE);
             let mut i_flow = i_stream.flow_input::<u8>(flow_settings).unwrap();
 
-            let mut buffer= [0 as u8; 256];
+            let mut buffer= [0 as u8; 128];
             i_flow.start();
 
             loop {
-                println!("send to server");
                 unsafe {
                     let in_frames = wait_for_stream(|| i_flow.read_available(), "Read");
                     if in_frames > 0 {
-                        let mut buff = i_flow.read(in_frames);
-                        println!("Read {:?} frames from the input stream.", in_frames);
-                        writer.write(&mut buff).await;
+                        let mut buf = i_flow.read(in_frames);
+                        writer.write(&mut buf).await;
                     }
                 }
             }

@@ -3,7 +3,7 @@ use portaudio::{PortAudio, DeviceIndex, DeviceInfo, Sample, Stream, Blocking, Ou
 
 // Audio Default
 pub const DEFAULT_RATE: f64 = 44_100.0;
-pub const DEFAULT_FRAMES: u32 = 256;
+pub const DEFAULT_FRAMES: u32 = 64;
 
 pub const DEFAULT_CHANNELS_COUNT: i32 = 2;
 pub const DEFAULT_INTERLEAVED: bool = true;
