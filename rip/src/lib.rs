@@ -1,7 +1,6 @@
 
+
+pub mod def;
+
 extern crate rip_audio;
-
-
-pub fn hello() {
-
-}
+extern crate rip_net;

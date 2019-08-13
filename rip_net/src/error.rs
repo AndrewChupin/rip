@@ -1,6 +1,6 @@
 
 
+#[derive(Debug)]
 enum NetError {
-    InvalidHostFormat,
-    FailedConnection,
+    NotFound
 }

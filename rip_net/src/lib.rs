@@ -1,13 +1,9 @@
+#![feature(async_await, async_closure)]
 
-
-pub mod client;
 pub mod error;
-pub mod socket;
-pub mod tcp;
-pub mod udp;
+pub mod peer;
+pub mod codec;
 
-
-pub fn hello() {
-    println!("Hello library")
-}
-
+#[macro_use]
+extern crate futures;
+extern crate bytes;

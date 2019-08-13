@@ -78,12 +78,8 @@ impl <'a> AudioStream<'a> {
         let core = &self.context.core;
 
         match self.settings.stream_type {
-            AudioType::Input => {
-
-            }
-            AudioType::Output => {
-
-            }
+            AudioType::Input => {}
+            AudioType::Output => {}
         };
     }
 }

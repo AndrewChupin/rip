@@ -9,10 +9,10 @@ use std::collections::VecDeque;
 use portaudio as pa;
 use std::iter::Zip;
 use rip_audio::error::AudioError;
-use rip_audio::flow::FlowSettings;
+use rip_audio::flow::{FlowSettings, wait_for_stream};
 
 fn main() {
-    run_example().unwrap();
+   // run_example().unwrap();
 }
 
 // Zip I -> O O -> I
@@ -43,27 +43,6 @@ fn run_example() -> Result<(), AudioError> {
     i_stream.start();
     o_stream.start();
 
-    // We'll use this function to wait for read/write availability.
-    fn wait_for_stream<F>(f: F, name: &str) -> u32
-        where F: Fn() -> Result<pa::StreamAvailable, pa::error::Error>
-    {
-        'waiting_for_stream: loop {
-            match f() {
-                Ok(available) => match available {
-                    pa::StreamAvailable::Frames(frames) => {
-                        if frames > 0 {
-                            return frames as u32
-                        } else {
-                            println!("frame 0");
-                        }
-                    },
-                    pa::StreamAvailable::InputOverflowed => println!("Input stream has overflowed"),
-                    pa::StreamAvailable::OutputUnderflowed => println!("Output stream has underflowed"),
-                },
-                Err(err) => panic!("An error occurred while waiting for the {} stream: {}", name, err),
-            }
-        }
-    };
 
     // Now start the main read/write loop! In this example, we pass the input buffer directly to
     // the output buffer, so watch out for feedback.

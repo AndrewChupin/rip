@@ -7,3 +7,10 @@ edition = "2018"
 [lib]
 name = "rip_net"
 path = "src/lib.rs"
+
+[dependencies]
+futures-preview = { version = "=0.3.0-alpha.17", features = ["async-await", "nightly"] }
+bytes = "0.4.12"
+
+[dependencies.tokio]
+version = "0.2.0-alpha.1"
